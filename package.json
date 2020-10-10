@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "pr": "npm run lint && npm run test -- --coverage",
     "reset": "cd android && ./gradlew clean && cd .. && watchman watch-del-all && npm start -- --reset-cache",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -40,6 +41,7 @@
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.58.0",
     "prettier": "^2.0.4",
+    "react-native-testing-library": "^6.0.0",
     "react-test-renderer": "16.11.0",
     "typescript": "^3.8.3"
   },
