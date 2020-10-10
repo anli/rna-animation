@@ -1,1 +1,2 @@
-export {default as PanGestureScreen} from './pan-gesture';
+export { default as BasicScreen } from './basic';
+
