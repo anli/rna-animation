@@ -1,17 +1,29 @@
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import {SafeAreaView, StatusBar} from 'react-native';
-import {BasicScreen} from './src/screens';
+import {Provider as PaperProvider} from 'react-native-paper';
+import {BasicScreen, HomeScreen} from './src/screens';
 
-declare const global: {HermesInternal: null | {}};
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <BasicScreen />
-      </SafeAreaView>
-    </>
+    <PaperProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="HomeScreen">
+          <Stack.Screen
+            name="BasicScreen"
+            component={BasicScreen.Component}
+            options={BasicScreen.options}
+          />
+          <Stack.Screen
+            name="HomeScreen"
+            component={HomeScreen.Component}
+            options={HomeScreen.options}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </PaperProvider>
   );
 };
 
