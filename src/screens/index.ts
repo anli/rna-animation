@@ -1,2 +1,1 @@
-export { default as BasicScreen } from './basic';
-
+export {default as BasicScreen} from './basic';
