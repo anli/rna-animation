@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView, StatusBar} from 'react-native';
-import {PanGestureScreen} from './src/screens';
+import {BasicScreen} from './src/screens';
 
 declare const global: {HermesInternal: null | {}};
 
@@ -9,7 +9,7 @@ const App = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <PanGestureScreen />
+        <BasicScreen />
       </SafeAreaView>
     </>
   );

@@ -6,6 +6,7 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
+import styled from 'styled-components/native';
 
 const BasicScreen = () => {
   const randomWidth = useSharedValue(10);
@@ -23,12 +24,7 @@ const BasicScreen = () => {
 
   return (
     <View>
-      <Animated.View
-        style={[
-          {width: 100, height: 80, backgroundColor: 'black', margin: 30},
-          style,
-        ]}
-      />
+      <AnimatedView style={style} />
       <Button
         title="toggle"
         onPress={() => {
@@ -40,3 +36,10 @@ const BasicScreen = () => {
 };
 
 export default BasicScreen;
+
+const AnimatedView = styled(Animated.View)`
+  width: 100px;
+  height: 80px;
+  background-color: black;
+  margin: 30px;
+`;
