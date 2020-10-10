@@ -1,8 +1,8 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {BasicScreen, HomeScreen} from '@screens';
 import React from 'react';
 import {Provider as PaperProvider} from 'react-native-paper';
-import {BasicScreen, HomeScreen} from './src/screens';
 
 const Stack = createStackNavigator();
 
