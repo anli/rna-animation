@@ -1,5 +1,6 @@
 import React from 'react';
-import {Button, View} from 'react-native';
+import {View} from 'react-native';
+import {Button as ButtonNative} from 'react-native-paper';
 import Animated, {
   Easing,
   useAnimatedStyle,
@@ -8,11 +9,11 @@ import Animated, {
 } from 'react-native-reanimated';
 import styled from 'styled-components/native';
 
-const BasicScreen = () => {
+const Component = () => {
   const randomWidth = useSharedValue(10);
 
   const config = {
-    duration: 500,
+    duration: 1000,
     easing: Easing.bezier(0.5, 0.01, 0, 1),
   };
 
@@ -22,24 +23,34 @@ const BasicScreen = () => {
     };
   });
 
+  const animate = () => {
+    randomWidth.value = Math.random() * 350;
+  };
+
   return (
     <View>
       <AnimatedView style={style} />
-      <Button
-        title="toggle"
-        onPress={() => {
-          randomWidth.value = Math.random() * 350;
-        }}
-      />
+      <Button mode="contained" onPress={animate}>
+        Press me!
+      </Button>
     </View>
   );
 };
 
-export default BasicScreen;
+const options = {title: 'Basic Animations'};
+
+export default class {
+  static Component = Component;
+  static options = options;
+}
 
 const AnimatedView = styled(Animated.View)`
   width: 100px;
   height: 80px;
   background-color: black;
   margin: 30px;
+`;
+
+const Button = styled(ButtonNative)`
+  margin: 24px 24px 24px 24px;
 `;
