@@ -1,6 +1,6 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {BasicScreen, HomeScreen} from '@screens';
+import {BasicScreen, HomeScreen, PanGestureScreen} from '@screens';
 import React from 'react';
 import {Provider as PaperProvider} from 'react-native-paper';
 
@@ -20,6 +20,11 @@ const App = () => {
             name="HomeScreen"
             component={HomeScreen.Component}
             options={HomeScreen.options}
+          />
+          <Stack.Screen
+            name="PanGestureScreen"
+            component={PanGestureScreen.Component}
+            options={PanGestureScreen.options}
           />
         </Stack.Navigator>
       </NavigationContainer>
