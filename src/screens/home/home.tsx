@@ -13,6 +13,12 @@ const Component = () => {
         description="Animating the width of a bar"
         onPress={() => navigate('BasicScreen')}
       />
+
+      <List.Item
+        title="Pan Gesture"
+        description="Animating the movement of a box"
+        onPress={() => navigate('PanGestureScreen')}
+      />
     </View>
   );
 };
