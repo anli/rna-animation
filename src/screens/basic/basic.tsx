@@ -23,12 +23,19 @@ const Component = () => {
     };
   });
 
+  const styleWithoutTiming = useAnimatedStyle(() => {
+    return {
+      width: randomWidth.value,
+    };
+  });
+
   const animate = () => {
     randomWidth.value = Math.random() * 350;
   };
 
   return (
     <View>
+      <AnimatedView color="purple" style={styleWithoutTiming} />
       <AnimatedView style={style} />
       <Button mode="contained" onPress={animate}>
         Press me!
@@ -44,10 +51,10 @@ export default class {
   static options = options;
 }
 
-const AnimatedView = styled(Animated.View)`
+const AnimatedView = styled<any>(Animated.View)`
   width: 100px;
   height: 80px;
-  background-color: black;
+  background-color: ${(props) => props.color || 'black'};
   margin: 30px;
 `;
 
