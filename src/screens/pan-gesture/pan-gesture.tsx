@@ -53,7 +53,6 @@ const PanGesture = ({
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
 
-  console.log({boundX, boundY, translateX, translateY});
   const onGestureEvent = useAnimatedGestureHandler<
     any,
     {
